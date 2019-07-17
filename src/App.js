@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import CircleContainer from "./components/CircleBoard/CircleBoard";
+import Buttons from "./components/ButtonBoard/ButtonBoard";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const buttons = ["B1", "B2", "B3", "B4"];
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selBtnIdx: 0
+    };
+  }
+
+  handleBtnSelection = btnIdx => {
+    this.setState({ selBtnIdx: btnIdx });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <header>Unit 4 Final Assessment</header>
+        <div className="wrapper">
+          <Buttons
+            buttons={buttons}
+            handleBtnSelection={this.handleBtnSelection}
+          />
+          <CircleContainer currentBtn={this.state.selBtnIdx} />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

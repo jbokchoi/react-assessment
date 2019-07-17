@@ -1,33 +1,82 @@
 .App {
   text-align: center;
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  height: 50px;
+  padding: 10px;
+  margin: 15px 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background-color: grey;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.button-board,
+.circle-container {
+  display: flex;
+  margin: 2vw;
+  padding: 15px;
+  width: 20vw;
+  height: 30vh;
+  border-radius: 8px;
+
+  align-items: center;
+}
+
+.button-board {
+  flex-direction: column;
+  border: 3px solid purple;
+  justify-content: space-around;
+}
+.circle-container {
+  flex-wrap: wrap;
+  border: 3px solid green;
+  justify-content: center;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border: 1px solid green;
+  border-radius: 50%;
+  margin: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  vertical-align: middle;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-color: purple;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:focus {
+  border: 3px solid purple;
+  background-color: white;
+  color: purple;
+  outline: none;
 }
